@@ -1,0 +1,37 @@
+{
+    "name": "rpovelones/composer-test",
+    "description": "Testing composer for wp dependency management",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Robert Povelones",
+            "email": "robert@trimarkdigital.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+
+        }
+    ],
+    "require": {
+        "composer/installers": "^2.0",
+        "composer-wordpress/no-content": "5.5.*",
+        "wpackagist-plugin/wordpress-seo":">=7.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "TriMark\\": "scripts/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "TriMark\\Utils::generateLocalHtaccess"
+    },
+    "extra": {
+        "installer-paths": {
+            "content/plugins/{$name}/": ["type:wordpress-plugin"]
+        },
+        "wordpress-install-dir": "wp"
+    }
+}

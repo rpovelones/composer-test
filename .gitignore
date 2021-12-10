@@ -1,0 +1,6 @@
+.DS_Store
+.htaccess
+content/plugins
+content/uploads
+vendor
+wp
